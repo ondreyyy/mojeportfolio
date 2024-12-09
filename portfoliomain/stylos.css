@@ -1,0 +1,553 @@
+/* Základní stylování */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(180deg, #121212, #1f1f1f);
+    color: #ffffff;
+}
+
+/* Hlavička */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #181818;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.neontext {
+    color: white;  /* Bílé písmo na všech stránkách */
+    text-shadow: none;  /* Odstranit neonový efekt */
+}
+
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: #53D8FB;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid #53D8FB;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: #53D8FB;
+    color: #181818;
+}
+
+/* Hlavní obsah */
+main {
+    padding: 40px;
+    text-align: center;
+}
+
+.hero {
+    background: linear-gradient(135deg, #2a2a72, #009ffd);
+    padding: 60px 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #53D8FB;
+    color: #181818;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.hero .btn:hover {
+    transform: scale(1.1);
+}
+
+/* Sekce - O mně, Kontakt atd. */
+.about, .contact {
+    padding: 20px;
+    margin-bottom: 40px;
+    background: #242424;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s forwards;
+}
+
+.about h2, .contact h2 {
+    font-size: 2rem;
+    color: #53D8FB;
+    margin-bottom: 20px;
+}
+
+.about p, .contact p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Paticka */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #181818;
+    border-top: 2px solid #53D8FB;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Animace pro přechody */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* GSAP Animace - přechody pro .hero a sekce */
+.hero-content {
+    opacity: 1; /* Nastavit na viditelný */
+    transform: translateY(0); /* Resetovat posun */
+}
+
+/* Galerie obrázků */
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-items: center;
+    margin-top: 40px;
+}
+
+.galerie img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Sekce "O mně" */
+.about {
+    padding: 40px 20px;
+    margin: 40px auto;
+    background: #242424;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #53D8FB;
+    margin-bottom: 20px;
+}
+
+.about-block {
+    margin-bottom: 40px;
+}
+
+.about-block h3 {
+    font-size: 2rem;
+    color: #53D8FB;
+    margin-bottom: 10px;
+}
+
+.about-block p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.contact {
+    background: #242424;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.contact h3 {
+    font-size: 2rem;
+    color: #53D8FB;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.contact .btn {
+    padding: 10px 20px;
+    background-color: #53D8FB;
+    color: #181818;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.contact .btn:hover {
+    transform: scale(1.1);
+}
+
+/* Původní styl tlačítka */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #53D8FB;
+    color: #181818;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover efekt pro tlačítko */
+.btn:hover {
+    transform: scale(1.1); /* Zvětší tlačítko */
+    background-color: #009ffd; /* Změní barvu pozadí tlačítka */
+    box-shadow: 0 4px 12px rgba(0, 159, 253, 0.5); /* Přidá jemný stín */
+}
+
+/* Styl pro sekci Kontakt */
+.contact {
+    padding: 40px;
+    margin-bottom: 40px;
+    background: #242424;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.contact h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Hover efekt pro odkazy v kontaktu */
+.contact p:hover {
+    color: #53D8FB;
+    cursor: pointer;
+}
+
+/* Styl pro sekci Mé práce */
+.work {
+    padding: 40px;
+    margin-bottom: 40px;
+    background: #242424;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.work-block {
+    margin-bottom: 30px;
+}
+
+.work h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.work p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.galerie img {
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.galerie img:hover {
+    transform: scale(1.1);
+}
+
+/* Styling pro odkazy */
+.work a {
+    color: #53D8FB;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.work a:hover {
+    text-decoration: underline;
+}
+
+/* Styling pro sekci Mé práce */
+.work {
+    padding: 40px;
+    margin-bottom: 40px;
+    background: #242424;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling pro každý blok v sekci */
+.work-block {
+    margin-bottom: 30px;
+}
+
+.work h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.work p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Styl pro bloky HTML a C# */
+.html-work {
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.html-work a {
+    color: #53D8FB;
+    text-decoration: none;
+}
+
+.html-work a:hover {
+    text-decoration: underline;
+}
+
+/* Styl pro bloky Photoshop */
+.photoshop-work {
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Galerie pro grafické výtvory */
+.galerie img {
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.galerie img:hover {
+    transform: scale(1.1);
+}
+
+/* Styl pro grafické výtvory */
+.graphics {
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Základní styl pro galerie obrázků */
+.galerie img {
+    margin: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.galerie img:hover {
+    transform: scale(1.1);
+}
+
+/* Styl pro modální okno */
+.modal {
+    display: none; /* Skrytí modalového okna */
+    position: fixed;
+    z-index: 1; /* Nad ostatními elementy */
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Polotransparentní pozadí */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Základní stylování pro menu */
+header nav {
+    position: relative;
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    color: #53D8FB;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .menu-toggle:hover {
+    color: #009ffd;
+  }
+  
+  .menu-list {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .menu-list li {
+    list-style: none;
+  }
+  
+  .menu-list a {
+    color: #53D8FB;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid #53D8FB;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-list a:hover {
+    background-color: #53D8FB;
+    color: #181818;
+  }
+
+
+
+
+
+
+/* Responsivní design pro menší obrazovky */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .logo img {
+        height: 40px;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    header nav a {
+        margin: 10px 0;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .about, .contact {
+        max-width: 100%;
+    }
+
+    .about p, .contact p {
+        font-size: 1rem;
+    }
+
+    .galerie {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #181818;
+        width: 200px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+    
+      .menu-list li {
+        padding: 15px 0;
+        text-align: center;
+      }
+    
+      .menu-toggle {
+        display: block;
+      }
+    
+      .menu-list.active {
+        display: flex;
+      }
+    }
+
+

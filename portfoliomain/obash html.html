@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Ondřej Vaškovič</title>
+  <link rel="stylesheet" href="stylos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="darkfoto.jpg" alt="Logo">
+      <h1 class="neon-text">Ondřej Vaškovič</h1>
+    </div>
+    <nav>
+      <a href="o mne.html">O mně</a>
+      <a href="me prace.html">Mé práce</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Vítejte na mém portfoliu</h2>
+        <p>Toto je místo, kde naleznete informace o mých dovednostech, projektech a kontaktních údajích.</p>
+        <a href="o mne.html" class="btn">Zjistěte více</a>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>O mně</h2>
+      <p>Jsem Ondřej Vaškovič, student střední školy zaměřený na grafiku a tvorbu webových stránek.</p>
+      <p>Baví mě tvořit moderní a estetické projekty, které spojují design a funkčnost.</p>
+    </section>
+
+    <section id="projects" class="about">
+      <h2>Mé práce</h2>
+      <p>Na této stránce najdete ukázky mých grafických návrhů a webových projektů, které jsem vytvořil.</p>
+      <a href="me prace.html" class="btn">Prohlédnout práce</a>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Kontakt</h2>
+      <p>Máte zájem o spolupráci? Kontaktujte mě prostřednictvím mého e-mailu nebo sociálních sítí.</p>
+      <p>E-mail: <a href="mailto:ondrej.vaskovic@seznam.cz">ondrej.vaskovic@seznam.cz</a></p>
+      <p>Telefon: +420 123 456 789</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Ondřej Vaškovič. Všechna práva vyhrazena.</p>
+  </footer>
+
+  <!-- Skript pro animace - Tento skript musí být na konci těla, aby vše fungovalo správně -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Animace pro .about, .contact a další sekce
+      gsap.from('.about, .contact', {
+        scrollTrigger: {
+          trigger: '.about', // Spustí animaci při přítomnosti sekce v okně
+          start: 'top 80%', // Kdy začne animace (80% výšky okna)
+          end: 'bottom 20%', // Kdy skončí animace
+          scrub: 1, // Vytváří plynulý efekt při scrollování
+        },
+        opacity: 0, // Na začátku skrytý
+        y: 50, // Posunuta dolů
+        duration: 1.5, // Délka animace
+        ease: 'power3.out', // Plynulé vystupování
+      });
+
+      // Hero animace
+      gsap.from('.hero-content', {
+        scrollTrigger: {
+          trigger: '.hero', 
+          start: 'top 75%', 
+          end: 'bottom 25%',
+          scrub: 1,
+        },
+        opacity: 0, // Na začátku skrytý
+        y: 30, // Posunuta nahoru
+        duration: 1.5,
+        ease: 'power3.out',
+      });
+    });
+  </script>
+</body>
+</html>
